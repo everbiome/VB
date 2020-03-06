@@ -1,0 +1,31 @@
+Public Class Form1
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Randomize()
+        shell1.Image = My.Resources.seashell_clipart_png_4
+        shell2.Image = My.Resources.seashell_clipart_png_4
+        shell3.Image = My.Resources.seashell_clipart_png_4
+        Dim num As Integer
+        num = Math.Ceiling(Rnd() * 30 + 1)
+        Select Case num
+            Case 1 To 10
+                If r1.Checked = True Then
+                    shell1.Image = My.Resources.TN_clam_shell_clipart
+                    MessageBox.Show("You Guessed It!")
+                Else
+                    MessageBox.Show("Try Again")
+                End If
+            Case 11 To 20
+                If r2.Checked = True Then
+                    shell2.Image = My.Resources.TN_clam_shell_clipart
+                Else
+                    MessageBox.Show("Try Again")
+                End If
+            Case 21 To 30
+                If r3.Checked = True Then
+                    shell3.Image = My.Resources.TN_clam_shell_clipart
+                Else
+                    MessageBox.Show("Try Again")
+                End If
+        End Select
+    End Sub
+End Class
